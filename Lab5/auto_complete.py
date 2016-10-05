@@ -51,9 +51,10 @@ def binarySearch(prefix, data):
     for i in range(index + 1, len(data)):
         if startsWith(prefix, data[i]):
             lst.append(data[i])
+    t_len = len(lst)
     for i in range(index - 1, -1, -1):
         if startsWith(prefix, data[i]):
-            lst.append(data[i])
+            lst.insert(t_len, data[i])
     return lst
 
 
