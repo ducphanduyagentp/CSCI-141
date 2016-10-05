@@ -131,7 +131,7 @@ def main():
 
         print('Match for linear unsorted is ', saved_data[0][index])
         print('Match for linear sorted is ', saved_data[1][index])
-        print('Match for binary unsorted is ', saved_data[2][index])
+        print('Match for binary sorted is ', saved_data[2][index])
         index = (index + 1) % len(saved_data[0])
 
 
