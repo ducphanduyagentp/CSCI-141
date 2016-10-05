@@ -37,7 +37,7 @@ def binarySearch(prefix, data):
     """
     - Using binary searching to find an occurrence of a word in the list that starts with the prefix
     - Using linear searching to iterate forward from that occurrence to find matches
-    - Using linear searching to iterate backward from that occurrence to find matches
+    - Using linear searching to wrap around the match list when reaching the end of the match list
     - Store all matches in a list
     :param prefix: string
     :param data: list
@@ -118,14 +118,14 @@ def main():
             index = 0
 
         if flag == 1 and noMatches:
-            print('There are no matches.')
+            print('There are no matches.\n')
             continue
 
         if flag == 0:
             saved_data.append(linearSearch(prefix, unsorted_lst))
             if len(saved_data[0]) == 0:
                 noMatches = True
-                print('There are no matches')
+                print('There are no matches\n')
                 continue
             saved_data.append(linearSearch(prefix, sorted_lst))
             saved_data.append(binarySearch(prefix, sorted_lst))
@@ -133,6 +133,7 @@ def main():
         print('Match for linear unsorted is ', saved_data[0][index])
         print('Match for linear sorted is ', saved_data[1][index])
         print('Match for binary sorted is ', saved_data[2][index])
+        print()
         index = (index + 1) % len(saved_data[0])
 
 
