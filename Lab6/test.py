@@ -39,5 +39,4 @@ def main():
     putPlaces(places)
     t.done()
 
-
-main()
+# main()
