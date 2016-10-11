@@ -16,14 +16,27 @@ class Place(struct):
 
 
 def WELCOME_MESSAGE():
+    """
+    Return the welcome message
+    :return: str
+    """
     return 'Welcome to the Dippy Hippie Tour. Get on the bus!'
 
 
 def DATA_PREFIX():
+    """
+    Return the prefix of data directory
+    :return: str
+    """
     return 'data/'
 
 
 def readFile(filename):
+    """
+    Read data about places in the provided file, including names and coordinates of places
+    :param filename: str
+    :return: list
+    """
     places = []
     for lines in open(filename):
         lst = lines.split(',')
@@ -34,13 +47,24 @@ def readFile(filename):
 
 
 def initCanvas():
+    """
+    - Init a drawing canvas of size 600 x 600 and set up a 1000 x 1000 coordinate system
+    - Place the turtle in the origin with the pen up
+    :return: NoneType
+    """
     t.setup(600, 600)
     t.setworldcoordinates(-10, -10, 1010, 1010)
     t.goto(0, 0)
     t.up()
 
 
-def putPlaces(places):
+def drawPath(places):
+    """
+    - Draw the path of the tour in the order of the provided list
+    - Mark each place with its name and coordinates of 2 decimal places
+    :param places: list
+    :return: NoneType
+    """
     places.append(places[0])
     for i in range(len(places)):
         place = places[i]
@@ -54,10 +78,21 @@ def putPlaces(places):
 
 
 def calculatePointsDistance(A, B):
+    """
+    Calculate the Euclidian distance between two points
+    :param A: Place
+    :param B: Place
+    :return: float
+    """
     return math.sqrt((A.x - B.x) ** 2 + (A.y - B.y) ** 2)
 
 
 def calculateTourDistance(places):
+    """
+    Calculate the total distance travelled in the tour
+    :param places: list
+    :return: float
+    """
     sum = 0
     for i in range(1, len(places)):
         sum += calculatePointsDistance(places[i], places[i - 1])
@@ -65,12 +100,21 @@ def calculateTourDistance(places):
 
 
 def printWelcomeMessage():
+    """
+    Print a banner with a welcome message
+    :return: NoneType
+    """
     print('+' * len(WELCOME_MESSAGE()))
     print(WELCOME_MESSAGE())
     print('+' * len(WELCOME_MESSAGE()))
 
 
 def readData():
+    """
+    - Prompt user for a filename
+    - Read and store data about places in a list
+    :return: list
+    """
     filename = input('Enter filename: ')
     places = readFile(DATA_PREFIX() + filename)
     infoString = 'Reading ' + filename + ' ... ' + str(len(places)) + ' place'
@@ -83,6 +127,11 @@ def readData():
 
 
 def printTour(places):
+    """
+    Print the places in the order of the tour
+    :param places: list
+    :return: NoneType
+    """
     places.append(places[0])
     for i in range(len(places)):
         if i > 0:
@@ -92,12 +141,23 @@ def printTour(places):
 
 
 def printTourDistance(places):
+    """
+    Print the total distance travelled of the tour
+    :param places: list
+    :return: NoneType
+    """
     places.append(places[0])
     print('Distance: ', calculateTourDistance(places))
 
 
 def drawTour(places):
+    """
+    - Set up a drawing canvas
+    - Draw the path of the tour and mark every place in the tour
+    :param places: list
+    :return: NoneType
+    """
     initCanvas()
-    putPlaces(places)
+    drawPath(places)
     print('Close the canvas window to quit.')
     t.done()
