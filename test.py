@@ -1,4 +1,4 @@
-import rit_lib
+from lib import rit_lib
 
 
 class test(rit_lib.struct):

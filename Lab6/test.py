@@ -1,6 +1,6 @@
 import turtle as t
 
-from rit_lib import *
+from lib.rit_lib import *
 
 
 class Place(struct):

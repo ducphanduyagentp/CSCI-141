@@ -5,7 +5,7 @@ author: Duc Duy Phan - ddp3945@rit.edu
 description: Homework 6 - CSCI-141
 """
 
-from rit_lib import *
+from lib.rit_lib import *
 
 
 class LRUEntry(struct):

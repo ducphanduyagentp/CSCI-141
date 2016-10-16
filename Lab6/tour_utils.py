@@ -8,7 +8,7 @@ description: Utility functions and classes - Lab 6 - CSCI-141
 import math
 import turtle as t
 
-from rit_lib import *
+from lib.rit_lib import *
 
 
 class Place(struct):
