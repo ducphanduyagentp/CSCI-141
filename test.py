@@ -1,15 +1,20 @@
-from lib import rit_lib
-
-
-class test(rit_lib.struct):
-    _slots = ((str, 'f'), (int, 's'))
-
-
-gg = test('test1', 2)
-
-
-def main():
-    pass
-
-
-main()
+6
+8
+9
+3
+5
+7
+10
+1
+2
+4
+6
+8
+9
+5
+7
+10
+1
+2
+3
+4
