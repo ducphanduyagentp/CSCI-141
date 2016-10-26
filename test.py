@@ -1,20 +1,26 @@
-6
-8
-9
-3
-5
-7
-10
-1
-2
-4
-6
-8
-9
-5
-7
-10
-1
-2
-3
-4
+"""
+file: test.py
+language: python 3
+author: Duc Phan - ddp3945@rit.edu
+"""
+
+
+class test1:
+    def __init__(self):
+        pass
+
+    def hash1(self, x):
+        return hash(x)
+
+
+def main():
+    gg = test1()
+    print(hash('a2'))
+    print(hash('a2'))
+    print(hash('a2'))
+    print(hash('a2'))
+    print(hash('a2'))
+    print(hash('a2'))
+
+
+main()
