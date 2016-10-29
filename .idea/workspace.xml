@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="472bfc6c-d3ee-46a2-a001-2825b1ee5b2a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab9/chainhash.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab8/dlList.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab9/chainhash/atotc.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab9/chainhash/default.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab9/chainhash/hashtable.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab9/chainhash/mb.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab9/chainhash/pycount.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab9/chainhash/rit_lib.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab9/chainhash/word_count.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lab9/chainhash/word_count_small_table.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab8/potato.zip" afterPath="$PROJECT_DIR$/Lab8/potato.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Homework9/dictionary_impossible.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Homework9/plain_text.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Homework9/secret_key.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/myNode.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rit_lib.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slList.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slList_stu.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homework8/dna_tester.py" afterPath="$PROJECT_DIR$/Homework8/dna_tester.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab8/potato.py" afterPath="$PROJECT_DIR$/Lab8/potato.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
     </list>
     <ignored path="test.iws" />
@@ -41,6 +35,7 @@
     <SUITE FILE_PATH="coverage/test$potato.coverage" NAME="potato Coverage Results" MODIFIED="1477444393610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab8" />
     <SUITE FILE_PATH="coverage/test$lru.coverage" NAME="lru Coverage Results" MODIFIED="1475972784300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Homework6" />
     <SUITE FILE_PATH="coverage/test$bowtie.coverage" NAME="bowtie Coverage Results" MODIFIED="1473208409022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/test$dictionary_impossible.coverage" NAME="dictionary_impossible Coverage Results" MODIFIED="1477784152037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Homework9" />
     <SUITE FILE_PATH="coverage/test$myQueueViaStacks.coverage" NAME="myQueueViaStacks Coverage Results" MODIFIED="1476506052982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Homework7" />
     <SUITE FILE_PATH="coverage/test$testQueueViaStacks.coverage" NAME="testQueueViaStacks Coverage Results" MODIFIED="1476506050748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Homework7" />
     <SUITE FILE_PATH="coverage/test$bowties__1_.coverage" NAME="bowties (1) Coverage Results" MODIFIED="1473813727670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab2" />
@@ -88,31 +83,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="potato.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Lab8/potato.py">
+      <file leaf-file-name="dictionary_impossible.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Homework9/dictionary_impossible.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="-24">
+              <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dlList.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lab8/dlList.py">
+      <file leaf-file-name="plain_text.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Homework9/plain_text.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1829">
-              <caret line="109" column="17" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dlNode.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lab8/dlNode.py">
+      <file leaf-file-name="secret_key.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Homework9/secret_key.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,8 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/RIT.py" />
         <option value="$USER_HOME$/Downloads/smiling_faces.py" />
         <option value="$PROJECT_DIR$/fourway_button.py" />
         <option value="$PROJECT_DIR$/triangles.py" />
@@ -188,6 +181,9 @@
         <option value="$PROJECT_DIR$/Lab8/dlList.py" />
         <option value="$PROJECT_DIR$/Lab8/dlNode.py" />
         <option value="$PROJECT_DIR$/Lab8/potato.py" />
+        <option value="$PROJECT_DIR$/Homework9/plain_text.txt" />
+        <option value="$PROJECT_DIR$/Homework9/secret_key.txt" />
+        <option value="$PROJECT_DIR$/Homework9/dictionary_impossible.py" />
       </list>
     </option>
   </component>
@@ -228,6 +224,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -246,23 +243,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lab8" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,7 +271,7 @@
       <recent name="$PROJECT_DIR$/Homework7" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.potato">
+  <component name="RunManager" selected="Python.dictionary_impossible">
     <configuration default="false" name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -306,29 +288,6 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in test1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="test" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="CLASS_NAME" value="test1" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="Unittests in test (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -386,6 +345,24 @@
       <module name="test" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab8/potato.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="dictionary_impossible" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Homework9" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Homework9/dictionary_impossible.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -600,18 +577,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.test (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test1" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.hashtable" />
-      <item index="4" class="java.lang.String" itemvalue="Python.potato" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.hashtable" />
+      <item index="3" class="java.lang.String" itemvalue="Python.potato" />
+      <item index="4" class="java.lang.String" itemvalue="Python.dictionary_impossible" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.potato" />
-        <item index="1" class="java.lang.String" itemvalue="Python.hashtable" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test1" />
+        <item index="0" class="java.lang.String" itemvalue="Python.dictionary_impossible" />
+        <item index="1" class="java.lang.String" itemvalue="Python.potato" />
+        <item index="2" class="java.lang.String" itemvalue="Python.hashtable" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -748,7 +725,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476988457288</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="- Fix Lab8&#10;- Add Lab 9">
+      <created>1477444464576</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1477444464576</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -796,7 +780,7 @@
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31060606" sideWeight="0.49380806" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3159091" sideWeight="0.49380806" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34055728" sideWeight="0.5030303" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296617" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -880,7 +864,8 @@
     <MESSAGE value="Add Lab8" />
     <MESSAGE value="Add Lab8 (completed)" />
     <MESSAGE value="Add Homework8 (completed)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Homework8 (completed)" />
+    <MESSAGE value="- Fix Lab8&#10;- Add Lab 9" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Fix Lab8&#10;- Add Lab 9" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -891,27 +876,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Lab6/data/p8.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab6/data/p9.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab6/data/p10.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lab6/data/p27.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-99">
@@ -962,14 +926,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="34">
@@ -977,6 +933,14 @@
           </first_editor>
           <second_editor />
         </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Lab6/test1.py">
@@ -1229,9 +1193,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab8/potato.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding>
-            <element signature="e#2614#3136#0" expanded="false" />
+            <element signature="e#128#141#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab8/dlList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1853">
+          <caret line="109" column="17" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1243,18 +1222,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab8/dlList.py">
+    <entry file="file://$PROJECT_DIR$/Homework9/secret_key.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1829">
-          <caret line="109" column="17" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab8/potato.py">
+    <entry file="file://$PROJECT_DIR$/Homework9/plain_text.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Homework9/dictionary_impossible.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
           <folding />
         </state>
       </provider>

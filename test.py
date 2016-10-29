@@ -1,26 +1,13 @@
-"""
-file: test.py
-language: python 3
-author: Duc Phan - ddp3945@rit.edu
-"""
-
-
-class test1:
-    def __init__(self):
-        pass
-
-    def hash1(self, x):
-        return hash(x)
-
-
-def main():
-    gg = test1()
-    print(hash('a2'))
-    print(hash('a2'))
-    print(hash('a2'))
-    print(hash('a2'))
-    print(hash('a2'))
-    print(hash('a2'))
-
-
-main()
+def count(filename):
+    d = dict()
+    for line in open(filename):
+        lst = line.strip().split()
+        for word in lst:
+            if not word in d:
+                d[word] = 1
+            else:
+                d[word] += 1
+    lst = list(d.keys())
+    lst.sort()
+    for word in lst:
+        print('{}: {}'.format(word, d[word]))
