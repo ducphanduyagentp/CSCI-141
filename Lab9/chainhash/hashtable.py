@@ -1,15 +1,8 @@
 """
-description: open addressing Hash Table for CS 141 Lecture
 file: hashtable.py
 language: python3
-author: sps@cs.rit.edu Sean Strout
-author: jeh@cs.rit.edu James Heliotis
-author: anh@cs.rit.edu Arthur Nunes-Harwitt
-author: jsb@cs.rit.edu Jeremy Brown
-author: as@cs.rit.edu Amar Saric
-author: scj@cs.rit.edu Scott Johnson
-           -- Added the hash function as a slot to the hash table
-		   -- Added a capacity slot in the hash table
+author: Duc Phan - ddp3945@rit.edu
+description: chaining Hash Table - CSCI-141 Lab 9
 """
 
 from rit_lib import *
@@ -17,57 +10,69 @@ from rit_lib import *
 
 class HashTable(struct):
     """
-           The HashTable data structure contains a collection of values
-       where each value is located by a hashable key.
-       No two values may have the same key, but more than one
-       key may have the same value.
-       table is the list holding the hash table
-       size is the number of elements in occupying the hashtable
-
+    table: python list of python list - holding the hash table
+    size: int - number of unique keys in the hash table
+    nEntries: int - number of non-empty chain in the hash table
+    capacity: int
+    hash_func: object
     """
-    _slots = ((list, 'table'), (int, 'size'),
+    _slots = ((list, 'table'), (int, 'size'), (int, 'nEntries'),
               (int, 'capacity'), (object, 'hash_func'))
 
 
 def createHashTable(hash_func, capacity=100):
     """
-    createHashTable: NatNum? -> HashTable
+    createHashTable: Function NatNum -> HashTable
+    Create a hash table that uses chaining.
     """
     # COMPLETE THIS FUNCTION
     lst = [[] for _ in range(capacity)]
-    return HashTable(lst, 0, capacity, hash_func)
+    return HashTable(lst, 0, 0, capacity, hash_func)
 
 
 def resizeHashTable(hTable):
     """
-    HashTableToStr: HashTable -> None
-    
-    Doubles the size of the table.
+    resizeHashTable: HashTable -> None
+    - Change the hash table of capacity N to a hash table of capacity 2N + 1
+    - Rehash the entries in the hash table
     """
-
     # COMPLETE THIS FUNCTION
-
+    newCapacity = 2 * hTable.capacity + 1
+    newNEntries = 0
+    lst = [[] for _ in range(newCapacity)]
+    for chain in hTable.table:
+        for e in chain:
+            index = hTable.hash_func(e.key) % newCapacity
+            if len(lst[index]) == 0:
+                newNEntries += 1
+            lst[index].append(e)
+    hTable.table = lst
+    hTable.capacity = newCapacity
+    hTable.nEntries = newNEntries
     return None
 
 
 def HashTableToStr(hashtable):
     """
     HashTableToStr: HashTable -> String
+    Represent the content of the hash table into string
     """
     result = ""
     for i in range(len(hashtable.table)):
-        e = hashtable.table[i]
-        if not e == None:
-            result += str(i) + ": "
-            result += EntryToStr(e) + "\n"
+        lst = hashtable.table[i]
+        result += str(i) + ": ["
+        for j in range(len(lst)):
+            if j > 0:
+                result += ', '
+            result += EntryToStr(lst[j])
+        result += ']\n'
     return result
 
 
 class Entry(struct):
     """
-       A class used to hold key/value pairs.
+    A class used to hold key/value pairs.
     """
-
     _slots = ((object, "key"), (object, "value"))
 
 
@@ -82,10 +87,8 @@ def EntryToStr(entry):
 def imbalance(hTable):
     """
     keys: HashTable(K, V) -> Num
-    
     Computes the imbalance of the hashtable.
     """
-
     # COMPLETE THIS FUNCTION
     nChain = 0
     sum = 0
@@ -104,8 +107,8 @@ def keys(hTable):
     Return a list of keys in the given hashTable.
     """
     result = []
-    for entry in hTable.table:
-        if entry != None:
+    for lst in hTable.table:
+        for entry in lst:
             result.append(entry.key)
     return result
 
@@ -113,18 +116,15 @@ def keys(hTable):
 def has(hTable, key):
     """
     has: HashTable(K, V) K -> Boolean
-    Return True iff hTable has an entry with the given key.
+    Determine if hTable has an entry with the given key.
     """
-
     # THIS IS OPEN-ADDRESSING has(). REWRITE THIS FUNCTION FOR CHAINING.
 
     index = hTable.hash_func(key) % hTable.capacity
-    startIndex = index  # We must make sure we don't go in circles.
-    while hTable.table[index] != None and hTable.table[index].key != key:
-        index = (index + 1) % len(hTable.table)
-        if index == startIndex:
-            return False
-    return hTable.table[index] != None
+    for e in hTable.table[index]:
+        if e.key == key:
+            return True
+    return False
 
 
 def put(hTable, key, value):
@@ -138,25 +138,80 @@ def put(hTable, key, value):
     """
 
     # COMPLETE THIS FUNCTION
+    load = hTable.nEntries / hTable.capacity
+    if load >= 0.75:
+        resizeHashTable(hTable)
 
+    index = hTable.hash_func(key) % hTable.capacity
+    if has(hTable, key):
+        lst = hTable.table[index]
+        for i in range(len(lst)):
+            if lst[i].key == key:
+                lst[i].value = value
+    else:
+        lst = hTable.table[index]
+        if len(lst) == 0:
+            hTable.nEntries += 1
+        hTable.table[index].append(Entry(key, value))
+        hTable.size += 1
     return True
+
+
+def remove(hTable, key):
+    """
+    remove: HashTable(K, V) K -> None
+    Remove the entry that has the corresponding key from the hash table.
+    Precondition: has(hTable, key)
+    """
+    if not has(hTable, key):
+        raise Exception('Hash table does not contain key: {}'.format(key))
+
+    index = hTable.hash_func(key) % hTable.capacity
+    lst = hTable.table[index]
+    for i in range(len(lst)):
+        if lst[i].key == key:
+            del lst[i]
+            hTable.size -= 1
+            if len(lst) == 0:
+                hTable.nEntries -= 1
+            break
 
 
 def get(hTable, key):
     """
     get: HashTable(K, V) K -> V
-
     Return the value associated with the given key in
     the given hash table.
-
     Precondition: has(hTable, key)
     """
     # COMPLETE THIS FUNCTION
+    if not has(hTable, key):
+        raise Exception('Hash table does not contain key: {}'.format(key))
 
+    index = hTable.hash_func(key) % hTable.capacity
+    lst = hTable.table[index]
+    for e in lst:
+        if e.key == key:
+            return e.value
     return None
 
 
-def hash_function(str):
+def hash_function_1(str):
+    """
+    hash_function_1: str -> NatNum
+    Implementation of hash function in question 1 of problem solving
+    """
+    sum = 0
+    for c in str:
+        sum += ord(c) - ord('a')
+    return sum
+
+
+def hash_function_2(str):
+    """
+    hash_function_2: str -> NatNum
+    Implementation of hash function in question 2 of problem solving
+    """
     sum = 0
     for i in range(len(str)):
         sum += ord(str[i]) * (31 ** i)

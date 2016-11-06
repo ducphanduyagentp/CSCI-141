@@ -1,0 +1,15 @@
+Question 1: Imbalance when using hash_function_1
+- mb.txt:
+    - Hash table of size 100: 33.05
+    - Hash table of size 1000: 15.44927536231884
+- atotc.txt:
+    - Hash table of size 100: 108.93
+    - Hash table of size 1000: 34.23397435897436
+
+Question 2: Imbalance when using hash_function_2
+- mb.txt:
+    - Hash table of size 100: 33.05
+    - Hash table of size 1000: 2.5175619834710745
+- atotc.txt:
+    - Hash table of size 100: 108.93
+    - Hash table of size 1000: 9.993

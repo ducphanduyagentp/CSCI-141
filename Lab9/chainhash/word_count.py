@@ -96,21 +96,23 @@ def hash_function(val):
 def main():
     capacity = int(input("Enter capacity (-1 for default): "))
     if capacity < 0:
-        hTable = createHashTable(hash_function)
+        hTable = createHashTable(hash_function_2)
     else:
-        hTable = createHashTable(hash_function, capacity)
+        hTable = createHashTable(hash_function_2, capacity)
     filename = input("Enter filename: ")
 
     wordTable = word_count(hTable, filename)
-    printSummary(wordTable)
-
-    while True:
+    # printSummary(wordTable)
+    print(imbalance(wordTable))
+    # print(HashTableToStr(wordTable))
+    return
+    for _ in range(1):
 
         print("Commands: k[ey] <word> f[ind] <word> q[uit] ? ", end=" ")
         response = input(":- ")  # the displayed prompt
         query = response.split()
 
-        if len(response) == 0 or not response[0] in "fkq":
+        if len(response) == 0 or not response[0] in "frkq":
             print(response + " invalid. Please enter a command and a word.")
             response = ""
             continue
@@ -128,6 +130,10 @@ def main():
 
         if query[0] == "q":
             break
+
+        if query[0] == "r":
+            remove(wordTable, query[1])
+            print(HashTableToStr(wordTable))
     #
     answer = input("Do you want to see the entire table?(y/n) ")
     if answer != "y":
