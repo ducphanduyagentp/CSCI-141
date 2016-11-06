@@ -102,13 +102,13 @@ def main():
     filename = input("Enter filename: ")
 
     wordTable = word_count(hTable, filename)
-    # printSummary(wordTable)
-    print(imbalance(wordTable))
-    # print(HashTableToStr(wordTable))
-    return
+    printSummary(wordTable)
+    print("Imbalance: " + str(imbalance(wordTable)))
+
+    # return
     for _ in range(1):
 
-        print("Commands: k[ey] <word> f[ind] <word> q[uit] ? ", end=" ")
+        print("Commands: k[ey] <word> f[ind] <word> r[emove] <word> q[uit] ? ", end=" ")
         response = input(":- ")  # the displayed prompt
         query = response.split()
 
@@ -134,7 +134,7 @@ def main():
         if query[0] == "r":
             remove(wordTable, query[1])
             print(HashTableToStr(wordTable))
-    #
+
     answer = input("Do you want to see the entire table?(y/n) ")
     if answer != "y":
         return
