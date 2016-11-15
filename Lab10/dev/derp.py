@@ -9,7 +9,7 @@ a stack of instructions (see compile_tree), and executes those instructions
 
 An expression contains the basic arithmetic operators (*,//,-,+).
 Derp performs arithmetic only with operands that are either integral
-numeric literals or variables read from a symbol table. 
+numeric literals or variables read from a symbol table.
 
 Derp prints the symbol table (see the displayTable function),
 produces the expression in infix form with parentheses to denote order
@@ -40,7 +40,7 @@ from stack_machine import *
 ##############################################################################
 
 class MultiplyNode(struct):
-    """ 
+    """
     Represents the multiply operation, *.
     """
 
@@ -48,7 +48,7 @@ class MultiplyNode(struct):
 
 
 class DivideNode(struct):
-    """ 
+    """
     Represents the integer divide operation, //.
     """
 
@@ -56,7 +56,7 @@ class DivideNode(struct):
 
 
 class AddNode(struct):
-    """ 
+    """
     Represents the addition operation, +.
     """
 
@@ -64,7 +64,7 @@ class AddNode(struct):
 
 
 class SubtractNode(struct):
-    """ 
+    """
     Represents the addition operation, -.
     """
 
@@ -72,7 +72,7 @@ class SubtractNode(struct):
 
 
 class LiteralNode(struct):
-    """ 
+    """
     Represents an integral operand node for an operation.
     """
 
@@ -80,7 +80,7 @@ class LiteralNode(struct):
 
 
 class VariableNode(struct):
-    """ 
+    """
     Represents a variable node for an operation.
     """
 
@@ -101,8 +101,11 @@ def readTable(inFile):
     Construct and return a dictionary that maps the variable name to its
     integer value.
     """
-
-    pass  # STUDENT: implement readTable function
+    d = dict()
+    for line in open(inFile):
+        line = line.split()
+        d[line[0]] = int(line[1])
+    return d
 
 
 ##############################################################################
@@ -114,26 +117,25 @@ def displayTable(symTbl):
     displayTable : dict(key=str, value=int) -> NoneType
     Displays the symbol table mapping for variable name to integer value.
     """
-
     print("Derping the symbol table (variable name => integer value)...")
-
-    pass  # STUDENT: implement displayTable function
+    for varName in symTbl:
+        print(varName + ' => ' + str(symTbl[varName]))
 
 
 ##############################################################################
 # parse
-############################################################################## 
+##############################################################################
 
 def parse(tokens, i=0):
     """
     parse : tuple(str) * NatNum -> tuple(Node, NatNum) | TypeError
 
     From an infix stream of tokens, and the current index into the
-    token stream, construct and return the tree, as a collection of Nodes, 
+    token stream, construct and return the tree, as a collection of Nodes,
     that represent the expression.
     If there is an incomplete statement or invalid token, raise a TypeError.
-    
-    NOTE: YOU ARE NOT ALLOWED TO MUTATE 'tokens' (e.g. tokens.pop())!!! 
+
+    NOTE: YOU ARE NOT ALLOWED TO MUTATE 'tokens' (e.g. tokens.pop())!!!
           YOU MUST USE 'i' TO GET THE CURRENT TOKEN OUT OF 'tokens'.
     """
     token = tokens[i]
@@ -168,34 +170,57 @@ def infix(node):
     Perform an infix traversal of the node and return a string that
     represents the infix expression.
     """
-
-    pass  # STUDENT: implement infix function
+    if isinstance(node, LiteralNode):
+        return str(node.val)
+    elif isinstance(node, VariableNode):
+        return node.name
+    else:
+        if isinstance(node, AddNode):
+            return '(' + infix(node.left) + ' + ' + infix(node.right) + ')'
+        elif isinstance(node, SubtractNode):
+            return '(' + infix(node.left) + ' - ' + infix(node.right) + ')'
+        elif isinstance(node, MultiplyNode):
+            return '(' + infix(node.left) + ' * ' + infix(node.right) + ')'
+        elif isinstance(node, DivideNode):
+            return '(' + infix(node.left) + ' // ' + infix(node.right) + ')'
 
 
 ##############################################################################
 # compile_tree compiles the expression tree to an executable stack machine.
-##############################################################################    
+##############################################################################
 
 def compile_tree(node, symTbl):
     """
     compile_tree : Node * dict(key=str, value=int) -> list( StackOp)
     Given the expression at the node and the symbol table,
-    return the list of functions necessary to evaluate the expression 
+    return the list of functions necessary to evaluate the expression
     at some point in the future.
     Precondition: all variable names must exist in symTbl.
     """
-
-    pass  # STUDENT: implement compile_tree function
+    if isinstance(node, LiteralNode):
+        return [emitPush(node.val)]
+    elif isinstance(node, VariableNode):
+        return [emitPush(symTbl[node.name])]
+    else:
+        if isinstance(node, AddNode):
+            return compile_tree(node.left, symTbl) + compile_tree(node.right, symTbl) + [emitAdd()]
+        elif isinstance(node, SubtractNode):
+            return compile_tree(node.left, symTbl) + compile_tree(node.right, symTbl) + [emitSub()]
+        elif isinstance(node, MultiplyNode):
+            return compile_tree(node.left, symTbl) + compile_tree(node.right, symTbl) + [emitMul()]
+        elif isinstance(node, DivideNode):
+            return compile_tree(node.left, symTbl) + compile_tree(node.right, symTbl) + [emitDiv()]
 
 
 ##############################################################################
 # main
 ##############################################################################
 
+
 def main():
     """
     main : Void -> NoneType
-    The main program prompts for the symbol table file, and a prefix 
+    The main program prompts for the symbol table file, and a prefix
     expression.  It produces the infix expression, and the integer result of
     evaluating the expression.
     """
@@ -206,6 +231,8 @@ def main():
     inFile = input("Herp, enter symbol table file: ")
 
     # STUDENT: CONSTRUCT AND DISPLAY THE SYMBOL TABLE HERE
+    symTbl = readTable(inFile)
+    displayTable(symTbl)
 
     print("Herp, enter prefix expressions, e.g.: + 10 20 (RETURN to quit).")
 
@@ -218,14 +245,14 @@ def main():
 
         # STUDENT: GENERATE A LIST OF TOKENS FROM THE PREFIX EXPRESSION
         tokens = prefixExp.split()
-        print(tokens)
-        # STUDENT: CALL parse WITH THE LIST OF TOKENS AND SAVE THE ROOT OF 
+
+        # STUDENT: CALL parse WITH THE LIST OF TOKENS AND SAVE THE ROOT OF
         # THE PARSE TREE.
 
-        tree = parse(tokens)  # replace with a call to your parse here
+        tree, i = parse(tokens)  # replace with a call to your parse here
 
         # STUDENT: GENERATE THE INFIX EXPRESSION BY CALLING infix AND SAVING
-        # THE STRING    
+        # THE STRING
 
         infixResult = infix(tree)  # replace with a call to your infix here
 
@@ -236,12 +263,12 @@ def main():
         # STUDENT: COMPILE THE PARSE TREE BY CALLING compile_tree AND SAVING THE
         # LIST OF BYTE-CODE INSTRUCTIONS
 
-        byteCodes = []  # replace with a call to your compile_tree here
+        byteCodes = compile_tree(tree, symTbl)  # replace with a call to your compile_tree here
 
         # STUDENT: CALL execute ON THE LIST OF BYTE-CODE INSTRUCTIONS
         # AND SAVING THE INTEGER RESULT
-
-        print("Executing the stack code: ", execute(byteCodes))
+        result = execute(byteCodes)
+        print("Executing the stack code: ", result)
 
     print("Goodbye Herp :(")
 
